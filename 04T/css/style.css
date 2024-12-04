@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Cambiar a una fuente más moderna y llamativa */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #333; /* Color del texto más oscuro para un contraste claro */
+}
+
+h1, h2, h3, p {
+  font-family: 'Roboto', sans-serif; /* Asegura que todos los encabezados y párrafos usen esta fuente */
+  color: #000000; /* Color llamativo (Tomato) para los textos importantes */
+  text-align: center;
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre las letras para mayor impacto */
+}
+
+.wrapper {
+  margin-bottom: 20px; /* Añade espacio entre el carrusel y el libro */
+}
+
+/* Custom Card */
+.custom-card {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  background: rgb(134, 72, 209);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Alineación vertical */
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Animación de la carta */
+.custom-card::before,
+.custom-card::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgb(208, 173, 230);
+  transition: all 0.5s;
+}
+
+.custom-card::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.custom-card::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0; /* Inicialmente oculto */
+  display: block;
+  transition: opacity 0.5s ease; /* Transición suave */
+  top: 50%; /* Coloca el texto verticalmente en el medio */
+  left: 50%; /* Coloca el texto horizontalmente en el medio */
+  transform: translate(-50%, -50%); /* Ajusta el texto para que esté perfectamente centrado */
+}
+
+/* Hover Effect */
+.custom-card:hover::before,
+.custom-card:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.custom-card:hover::after {
+  opacity: 1; /* Hace que el mensaje sea visible al hacer hover */
+}
+
+/* Mostrar el botón con una transición suave */
+.custom-card:hover .hidden-button {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Estilo del botón */
+.hidden-button {
+  font-size: 20px; /* Aumenta el tamaño del texto */
+  padding: 15px 30px; /* Aumenta el tamaño del botón */
+  background-color: #de96ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0; /* Inicialmente oculto */
+  visibility: hidden; /* Inicialmente oculto */
+  position: absolute; /* Centrado dentro de la tarjeta */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura el centrado exacto */
+  z-index: 2; /* Hace que el botón quede encima de los demás elementos */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Transición suave */
+}
+
+.hidden-button:hover {
+  background-color: #de96ff; /* Cambio de color al hacer hover */
+}
+
+
+
+
+/* From Uiverse.io by barisdogansutcu */ 
+button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}

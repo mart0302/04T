@@ -1,0 +1,228 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header con el ícono de la casa */
+header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .home-icon {
+    font-size: 30px;
+    background-color: purple;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .home-icon:hover {
+    transform: scale(1.1);
+    background-color: #8a2be2; /* Color morado más intenso */
+  }
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+}
+
+/* Estilos de la línea de tiempo */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+    gap: 20px; /* Espaciado entre tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Estilo de la tarjeta */
+.card {
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    min-width: 200px; /* Tamaño mínimo */
+    height: 200px; /* Ajustamos la altura de las tarjetas */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    margin: 10px;
+    box-sizing: border-box;
+    background-size: cover; /* Asegura que la imagen cubra toda la tarjeta */
+    background-position: center; /* Centra la imagen */
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.card:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+}
+
+/* Media Queries para pantallas más pequeñas */
+
+/* Pantallas grandes y medianas */
+@media (max-width: 1024px) {
+    .timeline {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+
+    .card {
+        height: 250px; /* Ajustamos la altura para pantallas medianas */
+    }
+
+    .card__title {
+        font-size: 20px; /* Reducimos el tamaño del título */
+    }
+
+    .card__description {
+        font-size: 14px; /* Mantemos la descripción legible */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: repeat(1, 1fr); /* Una sola columna en móviles */
+        gap: 15px; /* Menor espacio entre tarjetas */
+    }
+
+    .card {
+        height: 250px; /* Altura mayor en móviles */
+        min-width: 250px; /* Asegura que las tarjetas no sean demasiado pequeñas */
+    }
+
+    .card__title {
+        font-size: 18px; /* Reducimos el tamaño del título */
+    }
+
+    .card__description {
+        font-size: 12px; /* Reducimos el tamaño de la descripción */
+    }
+}
+
+.card.enero {
+    background-image: url('../img/Tarjetas1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.febrero {
+    background-image: url('../img/Tarjeta2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.marzo {
+    background-image: url('../img/Tarjeta3.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.abril {
+    background-image: url('../img/Tarjeta4.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.mayo {
+    background-image: url('../img/Tarjeta5.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.junio {
+    background-image: url('../img/Tarjeta6.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.julio {
+    background-image: url('../img/Tarjeta7.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.agosto {
+    background-image: url('../img/Tarjeta8.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.septiembre {
+    background-image: url('../img/Tarjeta9.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.octubre {
+    background-image: url('../img/Tarjeta10.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.noviembre {
+    background-image: url('../img/Foto1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card.diciembre {
+    background-image: url('../img/Foto1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
